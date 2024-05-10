@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="msg">Hello World</h1>
+    <button id="btn" type="button">Click me</button>
+    <button class="btn1" type="button">Click me</button>
+    <button class="btn2" type="button">Click me</button>
+    <button class="btn3" type="button">Click me</button>
+
+</body>
+<script>
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function(){
+        alert("Hello World");
+    });
+    let btn1 = document.querySelector('.btn1');
+    btn1.onclick = function(e) {
+        document.getElementById('msg').innerHTML = 'Xin chao'
+    }
+    let btn2 = document.querySelector('.btn2');
+    btn2.onclick = function(e) {
+        document.write('Xin chao')
+    }
+    let btn3 = document.querySelector('.btn3');
+    btn3.onclick =() => {
+        console.log('Xin chao');
+}
+</script>
+</html>
