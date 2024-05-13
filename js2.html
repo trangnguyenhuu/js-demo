@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" class="doC">
+    <button class="chuyenDoi">Đổi sang độ F</button>
+    <span class="ketQua"></span>
+
+</body>
+<script>
+    document.querySelector('.chuyenDoi').onclick = () => {
+        var a = parseInt(document.querySelector('.doC').value) 
+        if (!isNaN(a)) {
+            var c = a * 9/5 + 32
+            document.querySelector('.ketQua').innerHTML = `${a} độ C bằng ${c} độ F`
+        }
+        else {
+            document.querySelector('.ketQua').innerHTML = 'Vui lòng nhập số'
+        }
+    }
+</script>
+</html>

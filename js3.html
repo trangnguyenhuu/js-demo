@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Điền một giá trị để tính diện tích hình tròn (Đơn vị cm)</h2>
+    Chu vi<input type="text" class="chuVi">
+    Đường kính<input type="text" class="duongKinh">
+    Bán kính<input type="text" class="banKinh">
+    <button class="tinhChuVi">Tính chu vi</button>
+    <div>
+        DIEN TICH HINH TRON: 
+        <span class="ketQuaDienTich"></span>
+
+    </div>
+</body>
+<script>
+    var $ = document.querySelector.bind(document);
+    document.querySelector('.tinhChuVi').onclick = () => {
+        var C = +($('.chuVi').value)
+        var duongKinh = +($('.duongKinh').value)
+        var banKinh = +($('.banKinh').value)
+        if (!isNaN(C) && duongKinh == 0 && banKinh == 0) {
+            var a =  Math.PI * ((C / 2 / Math.PI) ** 2)
+            $('.ketQuaDienTich').innerHTML = `VỚI CHU VI ${C} LÀ ${Math.ceil(a)} cm^2 `
+            $('.chuVi').value = ''
+            $('.duongKinh').value = ''
+            $('.banKinh').value = ''
+        }
+        else if (!isNaN(duongKinh) && C == 0 && banKinh == 0 ) {
+            var b =  Math.PI * ((duongKinh / 2) ** 2)
+            $('.ketQuaDienTich').innerHTML = `VỚI ĐƯỜNG KÌNH ${duongKinh} LÀ ${Math.ceil(b)} cm^2 `
+            $('.chuVi').value = ''
+            $('.duongKinh').value = ''
+            $('.banKinh').value = ''
+        }
+        else if (!isNaN(banKinh) && C == 0 && duongKinh == 0 ) {
+            var c =  Math.PI * (banKinh ** 2)
+            $('.ketQuaDienTich').innerHTML = `VỚI BÁN KÍNH ${banKinh} LÀ ${Math.ceil(c)} cm^2`
+            $('.chuVi').value = ''
+            $('.duongKinh').value = ''
+            $('.banKinh').value = ''
+        }
+        else {
+            $('.ketQuaDienTich').innerHTML = 'Vui lòng nhập số'
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" class="Toan">
+        <input type="text" class="Ly">
+        <input type="text" class="Hoa">
+    </div>
+    <div>
+        <button class="Diem">Xem kết quả</button>
+    </div>
+    <div>
+        Điểm trung bình của bạn là:
+        <span class="DiemTB"></span>
+    </div>
+    <div>
+        Tổng điểm của bạn là
+        <span class="TongDiem"></span>
+    </div>
+</body>
+<script>
+    var $ = document.querySelector.bind(document)
+    document.querySelector('.Diem').onclick = () => {
+        var toan = parseInt($('.Toan').value)
+        var ly = parseInt($('.Ly').value)
+        var hoa = parseInt($('.Hoa').value)
+        if (!isNaN(toan) && !isNaN(ly) && !isNaN(hoa)) {
+            var tongDiem = toan + ly + hoa;
+            var diemTB = tongDiem / 3;
+            $('.DiemTB').innerHTML = diemTB;
+            $('.TongDiem').innerHTML = tongDiem;
+            $('.Toan').value = ''
+            $('.Ly').value = ''
+            $('.Hoa').value = ''
+        }
+        else {
+            $('.DiemTB').innerHTML = 'Vui lòng nhập số'
+        }
+    }
+</script>
+</html>

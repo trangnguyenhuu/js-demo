@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Điền một giá trị để tính Chu vi hình tròn (Đơn vị cm)</h2>
+    Đường kính<input type="text" class="duongKinh">
+    Bán kính<input type="text" class="banKinh">
+    <button class="tinhChuVi">Tính chu vi</button>
+    <div>
+        CHU VI HINH TRON: 
+        <span class="ketQuaChuVi"></span>
+
+    </div>
+</body>
+<script>
+    var $ = document.querySelector.bind(document);
+    document.querySelector('.tinhChuVi').onclick = () => {
+        var duongKinh = +($('.duongKinh').value)
+        var banKinh = +($('.banKinh').value)
+        if (!isNaN(duongKinh) && banKinh == 0 ) {
+            var b =  2 * Math.PI * (duongKinh / 2)
+            $('.ketQuaChuVi').innerHTML = `VỚI ĐƯỜNG KÌNH ${duongKinh} LÀ ${Math.ceil(b)} cm^2 `
+            $('.chuVi').value = ''
+            $('.duongKinh').value = ''
+            $('.banKinh').value = ''
+        }
+        else if (!isNaN(banKinh) && duongKinh == 0 ) {
+            var c =  2 * Math.PI * banKinh
+            $('.ketQuaChuVi').innerHTML = `VỚI BÁN KÍNH ${banKinh} LÀ ${Math.ceil(c)} cm^2`
+            $('.chuVi').value = ''
+            $('.duongKinh').value = ''
+            $('.banKinh').value = ''
+        }
+        else {
+            $('.ketQuaChuVi').innerHTML = 'Vui lòng nhập số'
+        }
+    }
+</script>
+</html>
