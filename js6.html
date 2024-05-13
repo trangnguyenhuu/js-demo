@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="text" class="value">
+        <input type="text" class="value1">
+    </div>
+    <br>
+    <div>
+        <button class="cong">Cộng</button>
+        <button class="tru">Trừ</button>
+        <button class="nhan">Nhân</button>
+        <button class="chia">Chia</button>
+    </div>
+    <br>
+    <div>
+        <span class="ketQua"></span>
+    </div>
+</body>
+<script>
+    var $ = document.querySelector.bind(document)
+    $('.cong').onclick = () => {
+        var a = +($('.value').value)
+        var b = +($('.value1').value)
+        $('.ketQua').innerHTML = "Kết quả bằng" + ' ' + (a + b)
+    }
+    $('.tru').onclick = () => {
+        var a = +($('.value').value)
+        var b = +($('.value1').value)
+        $('.ketQua').innerHTML = "Kết quả bằng" + ' ' + (a - b)
+    }
+    $('.nhan').onclick = () => {
+        var a = +($('.value').value)
+        var b = +($('.value1').value)
+        $('.ketQua').innerHTML = "Kết quả bằng" + ' ' + (a * b)
+    }
+    $('.chia').onclick = () => {
+        var a = +($('.value').value)
+        var b = +($('.value1').value)
+        $('.ketQua').innerHTML = "Kết quả bằng" + ' ' + (a / b)
+    }
+</script>
+</html>

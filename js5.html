@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body >
+    <div style="display: flex;">
+        <div>
+            <h3>Amount</h3>
+            <input type="text" class="denominations">
+        </div>
+        <div>
+            <h3>From Currency</h3>
+            <select name="Currency" id="VietNam">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+        <div>
+            <h3>To Currency</h3>
+            <select name="Currency" id="Dollar">
+                <option value="VND">VND</option>
+                <option value="USD">USD</option>
+            </select>
+        </div>
+    </div>
+    <button class="btn">Tính tiền</button>
+    <p class="result"></p>
+</body>
+<script>
+    document.querySelector('.btn').onclick = () => {
+        var a = document.querySelector('.denominations').value
+        var b = document.querySelector('#VietNam').value
+        var c = document.querySelector('#Dollar').value
+        var Result;
+        if(b == "VND" && c == "USD") {
+            Result =(a / 23000) + "$"
+        }
+        else if(b == "USD" && c == "VND") {
+            Result =(a * 23000) + "Đ"
+        }else if(b == "VND") {
+            Result =a + "Đ"
+        } else {
+            Result =a + "$"
+        }
+        document.querySelector('.result').textContent = "Result: " + Result;
+
+    }
+</script>
+</html>
